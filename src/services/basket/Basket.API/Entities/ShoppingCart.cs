@@ -7,6 +7,7 @@ namespace Basket.API.Entities
     {
         public string UserName { get; set; }
         public List<ShoppingCartItem> Items { get; set; }
+        public decimal TotalPrice => GetTotalPrice();
 
         public ShoppingCart()
         {
@@ -20,7 +21,12 @@ namespace Basket.API.Entities
 
         public decimal GetTotalPrice()
         {
-            decimal totalPrice = Items.Sum(x => x.Price * x.Quantity);
+            decimal totalPrice = 0;
+
+            foreach (var item in Items)
+            {
+                totalPrice += item.Price * item.Quantity;
+            }
 
             return totalPrice;
         }
