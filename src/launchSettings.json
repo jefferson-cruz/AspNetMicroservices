@@ -3,12 +3,14 @@
     "Docker Compose": {
       "commandName": "DockerCompose",
       "composeLaunchAction": "LaunchBrowser",
-      "composeLaunchServiceName": "catalog.api",
+      "composeLaunchServiceName": "basket.api",
       "composeLaunchUrl": "{Scheme}://localhost:{ServicePort}/swagger",
       "commandVersion": "1.0",
       "serviceActions": {
         "catalog.api": "StartDebugging",
-        "catalog.db": "StartWithoutDebugging"
+        "catalog.db": "StartWithoutDebugging",
+        "basket.api": "StartDebugging",
+        "basket.db": "StartWithoutDebugging"
       }
     }
   }
